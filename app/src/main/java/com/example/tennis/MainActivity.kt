@@ -2,6 +2,7 @@ package com.example.tennis
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.FirebaseApp
 import com.google.firebase.database.FirebaseDatabase
 
 
@@ -12,5 +13,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         myRef.setValue("Hello, World!");
+
     }
 }
