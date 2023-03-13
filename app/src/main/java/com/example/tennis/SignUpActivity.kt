@@ -3,6 +3,7 @@ package com.example.tennis
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.core.content.ContextCompat.startActivity
 import androidx.databinding.DataBindingUtil.setContentView
@@ -14,45 +15,62 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.database.ktx.database
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.FirebaseNetworkException
 
 class SignUpActivity : AppCompatActivity() {
+
     private lateinit var binding: ActivitySignupBinding
-    private lateinit var auth : FirebaseAuth
+    private lateinit var firebaseAuth: FirebaseAuth
+    private lateinit var firebaseDatabase: DatabaseReference
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         binding = ActivitySignupBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        FirebaseApp.initializeApp(this)
-        auth = FirebaseAuth.getInstance()
-        Firebase.database.reference
+        firebaseAuth = FirebaseAuth.getInstance()
+        firebaseDatabase = FirebaseDatabase.getInstance().reference.child("users")
 
-        binding.buttonSignUp.setOnClickListener{
-            signUp(binding.emailSignup.text.toString(), binding.createPassword.text.toString())
-        }
-    }
+        /*binding.textView.setOnClickListener {
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+        }*/
 
-    private fun signUp(email: String, password: String) {
-        auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(this) { task ->
-            if (task.isSuccessful) {
-                updateUI(auth.currentUser)
+        binding.buttonSignUp.setOnClickListener {
+            val email = binding.emailSignup.text.toString()
+            val pass = binding.createPassword.text.toString()
+            val confirmPass = binding.confirmPassword.text.toString()
+
+            if (email.isNotEmpty() && pass.isNotEmpty() && confirmPass.isNotEmpty()) {
+                if (pass == confirmPass) {
+
+                    firebaseAuth.createUserWithEmailAndPassword(email, pass).addOnCompleteListener { task ->
+                        if (task.isSuccessful) {
+                            // Récupérer l'utilisateur créé
+                            val user = task.result?.user
+
+                            // Ajouter l'utilisateur à Firebase Realtime Database
+                            val userRef = firebaseDatabase.child(user?.uid!!)
+                            val userData = HashMap<String, String>()
+                            userData["email"] = user.email!!
+                            userData["role"] = "member"
+                            userRef.setValue(userData)
+
+                            // Rediriger vers l'activité de connexion
+                            val intent = Intent(this, LoginActivity::class.java)
+                            startActivity(intent)
+                        } else {
+                            Toast.makeText(this, task.exception.toString(), Toast.LENGTH_SHORT).show()
+                        }
+                    }
+                } else {
+                    Toast.makeText(this, "Password is not matching", Toast.LENGTH_SHORT).show()
+                }
             } else {
-                Toast.makeText(baseContext, "Authentication failed.", Toast.LENGTH_SHORT).show()
-            }
-        }
-    }
-
-    private fun updateUI(user: FirebaseUser?) {
-        if (user != null) {
-            val createName = binding.createName.text.toString()
-            val numberPhone = binding.numberPhone.text.toString()
-            if (createName.isNotEmpty() && binding.emailSignup.text.toString().isNotEmpty() && binding.createPassword.text.toString().isNotEmpty() && binding.numberPhone.text.toString().isNotEmpty()) {
-                Firebase.database.reference.child("users").child(user.uid).setValue(User(user.uid, createName, numberPhone))
-                startActivity(Intent(this, TimeTable::class.java))
-                Snackbar.make(binding.root, "User created", Snackbar.LENGTH_SHORT).show()
-            } else {
-                Snackbar.make(binding.root, "Please fill all the fields", Snackbar.LENGTH_SHORT).show()
+                Toast.makeText(this, "Empty Fields Are not Allowed !!", Toast.LENGTH_SHORT).show()
             }
         }
     }

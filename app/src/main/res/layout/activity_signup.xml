@@ -60,13 +60,13 @@
         app:layout_constraintTop_toBottomOf="@+id/email_signup" />
 
     <EditText
-        android:id="@+id/numberPhone"
+        android:id="@+id/confirmPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:ems="10"
-        android:inputType="phone"
-        android:text="@android:string/emptyPhoneNumber"
+        android:inputType="textPassword"
+        android:text="@string/password"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
@@ -83,6 +83,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/numberPhone" />
+        app:layout_constraintTop_toBottomOf="@+id/confirmPassword" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
