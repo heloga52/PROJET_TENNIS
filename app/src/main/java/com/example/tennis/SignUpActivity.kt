@@ -8,7 +8,6 @@ import android.widget.Toast
 import androidx.core.content.ContextCompat.startActivity
 import androidx.databinding.DataBindingUtil.setContentView
 import com.example.tennis.databinding.ActivitySignupBinding
-import com.example.tennis.model.User
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.FirebaseAuth
@@ -75,3 +74,4 @@ class SignUpActivity : AppCompatActivity() {
         }
     }
 }
+

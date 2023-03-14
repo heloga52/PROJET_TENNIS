@@ -1,5 +1,6 @@
 package com.example.tennis.model
 
+<<<<<<< Updated upstream
 enum class UserRole {
     MEMBER, ADHERENT
 }
@@ -37,4 +38,14 @@ fun main() {
         }
     }
 }
+=======
+/*data class User(
+    val userId: String? = "" ,
+    var username: String = "",
+    val phone: String = "",
+)!/
+ */
+
+class User(val uid: String, val email: String, val role: String)
+>>>>>>> Stashed changes
 

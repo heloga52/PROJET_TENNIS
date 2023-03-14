@@ -4,8 +4,44 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+<<<<<<< Updated upstream
     tools:context=".AdminActivity">
 
+=======
+    android:background="#878080"
+    tools:context=".AdminActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- Titre de la liste -->
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#878484"
+            android:padding="16dp"
+            android:text="Liste des utilisateurs"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <!-- Liste des utilisateurs -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/users_list"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="#4C4949"
+            android:clipToPadding="false"
+            android:padding="16dp"
+            android:scrollbarSize="4dp"
+            android:scrollbars="vertical" />
+
+    </LinearLayout>
+
+>>>>>>> Stashed changes
     <Button
         android:id="@+id/logout_button"
         android:layout_width="wrap_content"
@@ -20,6 +56,7 @@
         tools:ignore="MissingConstraints" />
 
 
+<<<<<<< Updated upstream
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -72,4 +109,6 @@
     </LinearLayout>
 
 
+=======
+>>>>>>> Stashed changes
 </androidx.constraintlayout.widget.ConstraintLayout>

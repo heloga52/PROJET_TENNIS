@@ -10,6 +10,10 @@ import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.example.tennis.databinding.ActivityLoginBinding
+<<<<<<< Updated upstream
+=======
+import com.example.tennis.model.AdherentActivity
+>>>>>>> Stashed changes
 import com.google.firebase.database.*
 import com.google.firebase.FirebaseNetworkException
 
@@ -57,6 +61,7 @@ class LoginActivity : AppCompatActivity() {
                                         }
                                         if (isAdmin) {
                                             Log.d(ContentValues.TAG, "Redirecting to AdminActivity")
+<<<<<<< Updated upstream
                                             val intent = Intent(
                                                 this@LoginActivity,
                                                 AdminActivity::class.java
@@ -86,6 +91,28 @@ class LoginActivity : AppCompatActivity() {
                                         }
                                     }
 
+=======
+                                            val intent = Intent(this@LoginActivity, AdminActivity::class.java)
+                                            startActivity(intent)
+                                            finish()
+                                        } else if (role == "adherent") { // Ajouter cette condition
+                                            Log.d(ContentValues.TAG, "Redirecting to AdherentActivity")
+                                            val intent = Intent(this@LoginActivity, AdherentActivity::class.java)
+                                            startActivity(intent)
+                                            finish()
+                                        } else {
+                                            Log.d(ContentValues.TAG, "Redirecting to MainActivity")
+                                            val intent = Intent(this@LoginActivity, MainActivity::class.java)
+                                            startActivity(intent)
+                                            finish()
+                                        }
+                                    } else {
+                                        Log.w(ContentValues.TAG, "Role data is null")
+                                    }
+                                }
+
+
+>>>>>>> Stashed changes
 
                                 override fun onCancelled(databaseError: DatabaseError) {
                                     Toast.makeText(
