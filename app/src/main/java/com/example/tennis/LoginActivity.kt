@@ -10,10 +10,6 @@ import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.example.tennis.databinding.ActivityLoginBinding
-<<<<<<< Updated upstream
-=======
-import com.example.tennis.model.AdherentActivity
->>>>>>> Stashed changes
 import com.google.firebase.database.*
 import com.google.firebase.FirebaseNetworkException
 
@@ -61,37 +57,6 @@ class LoginActivity : AppCompatActivity() {
                                         }
                                         if (isAdmin) {
                                             Log.d(ContentValues.TAG, "Redirecting to AdminActivity")
-<<<<<<< Updated upstream
-                                            val intent = Intent(
-                                                this@LoginActivity,
-                                                AdminActivity::class.java
-                                            )
-                                            startActivity(intent)
-                                            finish()
-                                        } else if (role == "adherent"){
-                                            Log.d(ContentValues.TAG, "Redirecting to AdminActivity")
-                                            val intent = Intent(
-                                                this@LoginActivity,
-                                                AdherentActivity::class.java
-                                            )
-                                            startActivity(intent)
-                                            finish()
-                                        }                                   } else
-
-
-                                    {
-                                            Log.d(ContentValues.TAG, "Redirecting to MainActivity")
-                                            val intent =
-                                                Intent(
-                                                    this@LoginActivity,
-                                                    MainActivity::class.java)
-                                            startActivity(intent)
-                                            finish()
-
-                                        }
-                                    }
-
-=======
                                             val intent = Intent(this@LoginActivity, AdminActivity::class.java)
                                             startActivity(intent)
                                             finish()
@@ -112,7 +77,6 @@ class LoginActivity : AppCompatActivity() {
                                 }
 
 
->>>>>>> Stashed changes
 
                                 override fun onCancelled(databaseError: DatabaseError) {
                                     Toast.makeText(
@@ -142,4 +106,5 @@ class LoginActivity : AppCompatActivity() {
             finish()
         }
     }
+
 }

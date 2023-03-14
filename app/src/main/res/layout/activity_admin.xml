@@ -4,59 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-<<<<<<< Updated upstream
     tools:context=".AdminActivity">
 
-=======
-    android:background="#878080"
-    tools:context=".AdminActivity">
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-        <!-- Titre de la liste -->
-        <TextView
-            android:id="@+id/title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#878484"
-            android:padding="16dp"
-            android:text="Liste des utilisateurs"
-            android:textSize="18sp"
-            android:textStyle="bold" />
-
-        <!-- Liste des utilisateurs -->
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/users_list"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:background="#4C4949"
-            android:clipToPadding="false"
-            android:padding="16dp"
-            android:scrollbarSize="4dp"
-            android:scrollbars="vertical" />
-
-    </LinearLayout>
-
->>>>>>> Stashed changes
-    <Button
-        android:id="@+id/logout_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:background="@color/black"
-        android:text="Logout"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints" />
-
-
-<<<<<<< Updated upstream
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -74,41 +23,29 @@
 
         <!-- Liste des utilisateurs -->
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/user_list"
+            android:id="@+id/users_list"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
             android:clipToPadding="false"
             android:padding="16dp"
             android:scrollbars="vertical"
-            android:scrollbarSize="4dp"
-
-        <!-- Boutons radio pour modifier le rôle -->
-        <RadioGroup
-            android:id="@+id/role_radio_group"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="16dp"
-            android:visibility="visible">
-
-            <RadioButton
-                android:id="@+id/member_radio_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:checked="true"
-                android:text="Membre" />
-
-            <RadioButton
-                android:id="@+id/adherent_radio_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Adhérent" />
-        </RadioGroup>
+            android:scrollbarSize="4dp"/>
 
     </LinearLayout>
 
+    <Button
+        android:id="@+id/logout_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:background="@color/black"
+        android:text="Logout"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
 
-=======
->>>>>>> Stashed changes
+
 </androidx.constraintlayout.widget.ConstraintLayout>

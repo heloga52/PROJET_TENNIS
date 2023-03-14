@@ -12,7 +12,6 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.tennis.model.User
 import com.example.tennis.model.UserRole
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*

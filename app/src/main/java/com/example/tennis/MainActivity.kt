@@ -1,9 +1,6 @@
 package com.example.tennis
 
-<<<<<<< Updated upstream
 import android.annotation.SuppressLint
-=======
->>>>>>> Stashed changes
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
@@ -14,16 +11,12 @@ import com.google.firebase.database.FirebaseDatabase
 
 
 class MainActivity : AppCompatActivity() {
-<<<<<<< Updated upstream
-   /*private var database = FirebaseDatabase.getInstance()
-=======
     /*private var database = FirebaseDatabase.getInstance()
->>>>>>> Stashed changes
-    var myRef = database.getReference("message")
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        myRef.setValue("Hello, World!");*/
+     var myRef = database.getReference("message")
+     override fun onCreate(savedInstanceState: Bundle?) {
+         super.onCreate(savedInstanceState)
+         setContentView(R.layout.activity_main)
+         myRef.setValue("Hello, World!");*/
 
     private lateinit var mAuth: FirebaseAuth
 
@@ -49,4 +42,5 @@ class MainActivity : AppCompatActivity() {
         myRef.setValue("Hello, test");
 
     }
+
 }

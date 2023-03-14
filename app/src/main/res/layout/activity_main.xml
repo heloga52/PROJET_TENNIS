@@ -7,7 +7,6 @@
 
     <Button
         android:id="@+id/logout_button"
-<<<<<<< Updated upstream
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
@@ -17,8 +16,6 @@
         tools:ignore="MissingConstraints" />
 
     <TextView
-=======
->>>>>>> Stashed changes
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
