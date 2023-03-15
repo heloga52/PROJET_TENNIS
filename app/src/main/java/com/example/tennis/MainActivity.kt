@@ -3,6 +3,7 @@ package com.example.tennis
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.FirebaseApp
@@ -24,6 +25,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         mAuth = FirebaseAuth.getInstance()
+        Log.d("user", mAuth.currentUser.toString())
 
         // Récupération du bouton de déconnexion
         val signOutButton: Button = findViewById(R.id.logout_button)

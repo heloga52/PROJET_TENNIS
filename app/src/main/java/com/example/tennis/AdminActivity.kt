@@ -123,6 +123,5 @@ class UsersListAdapter(private val users: List<User>) :
             }
         }
     }
-
 }
 
