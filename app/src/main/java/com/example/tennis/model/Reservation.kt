@@ -7,7 +7,7 @@ data class Reservation(
     var month: String,
     var year: String,
     var plot: String,
-    var user: String
+    var user: String,
 ){
     constructor(): this("","",0,"","","","")
 }

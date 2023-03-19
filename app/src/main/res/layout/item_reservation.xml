@@ -1,0 +1,28 @@
+<!-- res/layout/item_reservation.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/text_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Date: "
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/text_heure"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Heure: "
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/text_parcelle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Parcelle: "
+        android:textStyle="bold" />
+
+</LinearLayout>

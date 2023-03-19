@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
+import com.example.tennis.model.User
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.RadioGroup
