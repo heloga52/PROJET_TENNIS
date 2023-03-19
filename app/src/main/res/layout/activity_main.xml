@@ -8,16 +8,12 @@
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="405dp"
-        android:layout_height="910dp"
-        android:background="#4E4C4C"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:scaleType="centerCrop"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/projet_tennis2"
-        tools:srcCompat="@drawable/projet_tennis2" />
+        app:srcCompat="@drawable/welcomepage1"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="16dp" />
 
     <Button
         android:id="@+id/logout_button"

@@ -8,8 +8,11 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.tennis.adapters.ReservationAdapter
 import com.example.tennis.databinding.ActivityAdherentBinding
+import com.example.tennis.databinding.CellReservationBinding
 import com.example.tennis.model.Reservation
+
 
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
@@ -21,6 +24,7 @@ class AdherentActivity : AppCompatActivity() {
     private lateinit var reservationAdapter: ReservationAdapter
     private lateinit var database: DatabaseReference
     private lateinit var auth: FirebaseAuth
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

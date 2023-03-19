@@ -18,12 +18,6 @@
             android:name=".CalendarActivity"
             android:exported="true" />
         <activity
-            android:name=".BookPlotActivity"
-            android:exported="false" />
-        <activity
-            android:name=".TimeTable"
-            android:exported="false" />
-        <activity
             android:name=".SignUpActivity"
             android:exported="true" >
             <intent-filter>

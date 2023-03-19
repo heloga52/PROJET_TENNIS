@@ -1,13 +1,12 @@
 package com.example.tennis
 
-import android.content.Intent
-import android.net.Uri.Builder
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.tennis.adapters.CalendarAdapter
 import com.example.tennis.databinding.ActivityCalendarBinding
 import com.example.tennis.model.Reservation
 import com.google.firebase.auth.FirebaseAuth

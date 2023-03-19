@@ -1,4 +1,4 @@
-package com.example.tennis
+package com.example.tennis.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
